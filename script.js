@@ -2,6 +2,178 @@
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
+/* Portal cinematográfico: el usuario activa el núcleo antes de entrar al sistema. */
+function initEntryPortal(){
+  const portal=document.getElementById('entry-portal');
+  const hold=document.getElementById('portal-hold');
+  const skip=document.getElementById('portal-skip-button');
+  if(!portal||!hold||!skip)return;
+
+  const seen=document.documentElement.classList.contains('portal-skip');
+  if(seen){
+    portal.hidden=true;
+    portal.setAttribute('aria-hidden','true');
+    return;
+  }
+
+  const status=document.getElementById('portal-status');
+  const progressCircle=portal.querySelector('.portal-progress-value');
+  const nodes=[...portal.querySelectorAll('.portal-node')];
+  const lines=[...portal.querySelectorAll('.portal-network line')];
+  const circumference=540;
+  const holdDuration=reducedMotion?650:1250;
+  let holding=false;
+  let completed=false;
+  let startedAt=0;
+  let frame=0;
+  let activePointer=null;
+
+  document.documentElement.classList.add('portal-active');
+  document.documentElement.style.overflow='hidden';
+  document.body.style.overflow='hidden';
+  progressCircle.style.strokeDashoffset=String(circumference);
+
+  const phases=[
+    {at:0,label:'INICIANDO NÚCLEO'},
+    {at:.18,label:'ESTRATEGIA CONECTADA'},
+    {at:.36,label:'GESTIÓN CONECTADA'},
+    {at:.54,label:'CONTROL CONECTADO'},
+    {at:.72,label:'MEDICIÓN CONECTADA'},
+    {at:.9,label:'CRECIMIENTO HABILITADO'}
+  ];
+
+  const setProgress=value=>{
+    const progress=Math.min(1,Math.max(0,value));
+    progressCircle.style.strokeDashoffset=String(circumference*(1-progress));
+    const activeCount=Math.min(nodes.length,Math.floor(progress*nodes.length+0.001));
+    nodes.forEach((node,index)=>node.classList.toggle('is-active',index<activeCount));
+    lines.forEach((line,index)=>line.classList.toggle('is-active',index<activeCount));
+    let current=phases[0].label;
+    phases.forEach(phase=>{if(progress>=phase.at)current=phase.label;});
+    if(status&&!completed)status.textContent=current;
+  };
+
+  const rememberEntry=()=>{
+    try{sessionStorage.setItem('tenno-entry-seen','1');}catch(error){}
+  };
+
+  const unlockPage=()=>{
+    document.documentElement.classList.remove('portal-active');
+    document.documentElement.style.overflow='';
+    document.body.style.overflow='';
+  };
+
+  const finish=(skipAnimation=false)=>{
+    if(completed)return;
+    completed=true;
+    holding=false;
+    cancelAnimationFrame(frame);
+    hold.classList.remove('is-holding');
+    hold.classList.add('is-complete');
+    rememberEntry();
+    setProgress(1);
+    nodes.forEach(node=>node.classList.add('is-active'));
+    lines.forEach(line=>line.classList.add('is-active'));
+    if(status)status.textContent=skipAnimation?'ACCESO DIRECTO':'SISTEMA ACTIVADO';
+    if(!skipAnimation&&navigator.vibrate){try{navigator.vibrate(18);}catch(error){}}
+
+    if(skipAnimation||reducedMotion){
+      portal.classList.add('is-revealing');
+      unlockPage();
+      window.setTimeout(()=>{
+        portal.hidden=true;
+        portal.setAttribute('aria-hidden','true');
+      },reducedMotion?60:420);
+      return;
+    }
+
+    portal.classList.add('is-unlocking');
+    window.setTimeout(()=>{
+      portal.classList.add('is-revealing');
+      unlockPage();
+      const hero=document.querySelector('.hero');
+      if(hero?.animate){
+        hero.animate([{filter:'brightness(.72)',transform:'scale(1.012)'},{filter:'brightness(1)',transform:'scale(1)'}],{duration:700,easing:'cubic-bezier(.2,.75,.2,1)'});
+      }
+    },900);
+    window.setTimeout(()=>{
+      portal.hidden=true;
+      portal.setAttribute('aria-hidden','true');
+    },1500);
+  };
+
+  const resetHold=()=>{
+    if(completed)return;
+    holding=false;
+    cancelAnimationFrame(frame);
+    hold.classList.remove('is-holding');
+    setProgress(0);
+    if(status)status.textContent='SISTEMA LISTO';
+  };
+
+  const tick=now=>{
+    if(!holding||completed)return;
+    const progress=(now-startedAt)/holdDuration;
+    setProgress(progress);
+    if(progress>=1){finish(false);return;}
+    frame=requestAnimationFrame(tick);
+  };
+
+  const beginHold=event=>{
+    if(completed||holding)return;
+    if(event?.type==='pointerdown'&&event.button!==0)return;
+    event?.preventDefault();
+    holding=true;
+    startedAt=performance.now();
+    hold.classList.add('is-holding');
+    if(event?.pointerId!=null){
+      activePointer=event.pointerId;
+      try{hold.setPointerCapture(activePointer);}catch(error){}
+    }
+    setProgress(.001);
+    frame=requestAnimationFrame(tick);
+  };
+
+  const endHold=event=>{
+    if(!holding||completed)return;
+    event?.preventDefault();
+    const elapsed=performance.now()-startedAt;
+    if(elapsed>=holdDuration){finish(false);return;}
+    resetHold();
+    if(activePointer!=null){
+      try{hold.releasePointerCapture(activePointer);}catch(error){}
+      activePointer=null;
+    }
+  };
+
+  hold.addEventListener('pointerdown',beginHold);
+  hold.addEventListener('pointerup',endHold);
+  hold.addEventListener('pointercancel',resetHold);
+  hold.addEventListener('contextmenu',event=>event.preventDefault());
+  hold.addEventListener('click',event=>event.preventDefault());
+  hold.addEventListener('keydown',event=>{
+    if((event.key===' '||event.key==='Enter')&&!event.repeat){
+      event.preventDefault();
+      beginHold(event);
+    }
+  });
+  hold.addEventListener('keyup',event=>{
+    if(event.key===' '||event.key==='Enter')endHold(event);
+  });
+  skip.addEventListener('click',()=>finish(true));
+
+  const escapeToEnter=event=>{
+    if(event.key==='Escape'&&!completed)finish(true);
+  };
+  document.addEventListener('keydown',escapeToEnter,{capture:true});
+
+  window.setTimeout(()=>{
+    if(!completed&&document.activeElement===document.body)hold.focus({preventScroll:true});
+  },500);
+}
+
+initEntryPortal();
+
 /* Capa de estilos de movimiento. Si no carga, la web base sigue funcionando. */
 const motionStyle=document.createElement('link');
 motionStyle.rel='stylesheet';
