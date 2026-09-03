@@ -7,6 +7,9 @@ const motionStyle=document.createElement('link');
 motionStyle.rel='stylesheet';
 motionStyle.href='motion.css?v=1';
 document.head.appendChild(motionStyle);
+const runtimeStyle=document.createElement('style');
+runtimeStyle.textContent='.motion-ready .hero .orbit-brand{transform:translate3d(var(--hero-brand-x,0px),var(--hero-brand-y,0px),0)}';
+document.head.appendChild(runtimeStyle);
 motionStyle.addEventListener('load',()=>document.documentElement.classList.add('motion-ready'));
 
 /* Foto del fundador: se reconstruye desde fragmentos verificados para evitar recursos truncados. */
@@ -233,12 +236,16 @@ if(hero&&finePointer&&!reducedMotion){
       const y=((event.clientY-r.top)/r.height-.5)*10;
       hero.style.setProperty('--hero-x',`${x}px`);
       hero.style.setProperty('--hero-y',`${y}px`);
+      hero.style.setProperty('--hero-brand-x',`${x*-.38}px`);
+      hero.style.setProperty('--hero-brand-y',`${y*-.38}px`);
       heroFrame=0;
     });
   });
   hero.addEventListener('pointerleave',()=>{
     hero.style.setProperty('--hero-x','0px');
     hero.style.setProperty('--hero-y','0px');
+    hero.style.setProperty('--hero-brand-x','0px');
+    hero.style.setProperty('--hero-brand-y','0px');
   });
 }
 
