@@ -6,9 +6,10 @@
 
   let context=null;
   let active=false;
+  let pressed=false;
   let master=null;
   let sources=[];
-  let startTime=0;
+  let startToken=0;
 
   const AudioCtx=window.AudioContext||window.webkitAudioContext;
   if(!AudioCtx)return;
@@ -35,33 +36,38 @@
   };
 
   const stopSound=(fast=false)=>{
+    pressed=false;
+    startToken++;
     if(!active||!context)return;
     active=false;
     const now=context.currentTime;
-    const release=fast?.018:.055;
-    if(master){
-      try{
-        master.gain.cancelScheduledValues(now);
-        master.gain.setValueAtTime(Math.max(.0001,master.gain.value),now);
-        master.gain.exponentialRampToValueAtTime(.0001,now+release);
-      }catch(error){}
-    }
+    const release=fast ? 0.018 : 0.055;
+    const oldMaster=master;
     const oldSources=sources;
     sources=[];
+    master=null;
+
+    if(oldMaster){
+      try{
+        oldMaster.gain.cancelScheduledValues(now);
+        oldMaster.gain.setValueAtTime(Math.max(.0001,oldMaster.gain.value),now);
+        oldMaster.gain.exponentialRampToValueAtTime(.0001,now+release);
+      }catch(error){}
+    }
+
     window.setTimeout(()=>{
       oldSources.forEach(source=>{try{source.stop();}catch(error){}});
-      try{master?.disconnect();}catch(error){}
-      master=null;
-    },Math.ceil((release+.035)*1000));
+      try{oldMaster?.disconnect();}catch(error){}
+    },Math.ceil((release+.04)*1000));
   };
 
-  const startSound=async event=>{
-    if(active||portal.hidden||document.documentElement.classList.contains('portal-skip'))return;
-    if(event?.type==='pointerdown'&&event.button!==0)return;
+  const startSound=async()=>{
+    if(active||!pressed||portal.hidden||document.documentElement.classList.contains('portal-skip'))return;
+    const token=++startToken;
     const ctx=await ensureContext();
-    if(!ctx||active)return;
+    if(!ctx||active||!pressed||token!==startToken)return;
     active=true;
-    startTime=ctx.currentTime;
+    const startTime=ctx.currentTime;
 
     master=ctx.createGain();
     master.gain.setValueAtTime(.0001,startTime);
@@ -83,25 +89,27 @@
     filter.frequency.exponentialRampToValueAtTime(2450,startTime+1.35);
     filter.connect(compressor);
 
-    /* Grave estable: da sensación de energía/motor encendiéndose. */
+    /* Grave estable: sensación de energía/motor activándose. */
     const bass=ctx.createOscillator();
     const bassGain=ctx.createGain();
     bass.type='sine';
     bass.frequency.setValueAtTime(72,startTime);
     bass.frequency.exponentialRampToValueAtTime(118,startTime+1.35);
     bassGain.gain.value=.64;
-    bass.connect(bassGain).connect(filter);
+    bass.connect(bassGain);
+    bassGain.connect(filter);
 
-    /* Armónico ascendente: crea la sensación de carga futurista. */
+    /* Armónico ascendente: sensación de carga futurista. */
     const charge=ctx.createOscillator();
     const chargeGain=ctx.createGain();
     charge.type='triangle';
     charge.frequency.setValueAtTime(144,startTime);
     charge.frequency.exponentialRampToValueAtTime(286,startTime+1.35);
     chargeGain.gain.value=.23;
-    charge.connect(chargeGain).connect(filter);
+    charge.connect(chargeGain);
+    chargeGain.connect(filter);
 
-    /* Brillo suave, casi metálico, para que no parezca un simple zumbido. */
+    /* Brillo suave, casi metálico. */
     const shimmer=ctx.createOscillator();
     const shimmerGain=ctx.createGain();
     shimmer.type='sine';
@@ -109,17 +117,19 @@
     shimmer.frequency.exponentialRampToValueAtTime(690,startTime+1.35);
     shimmerGain.gain.setValueAtTime(.025,startTime);
     shimmerGain.gain.linearRampToValueAtTime(.075,startTime+1.15);
-    shimmer.connect(shimmerGain).connect(filter);
+    shimmer.connect(shimmerGain);
+    shimmerGain.connect(filter);
 
-    /* Pulso muy lento que hace que la carga respire. */
+    /* Pulso lento: hace que la carga “respire”. */
     const lfo=ctx.createOscillator();
     const lfoGain=ctx.createGain();
     lfo.type='sine';
     lfo.frequency.value=5.4;
     lfoGain.gain.value=.018;
-    lfo.connect(lfoGain).connect(master.gain);
+    lfo.connect(lfoGain);
+    lfoGain.connect(master.gain);
 
-    /* Textura de aire filtrado para dar profundidad sin usar archivos MP3. */
+    /* Aire filtrado: profundidad sin cargar archivos MP3. */
     const noise=ctx.createBufferSource();
     const noiseGain=ctx.createGain();
     const noiseFilter=ctx.createBiquadFilter();
@@ -130,19 +140,28 @@
     noiseFilter.frequency.setValueAtTime(520,startTime);
     noiseFilter.frequency.exponentialRampToValueAtTime(1380,startTime+1.35);
     noiseFilter.Q.value=.75;
-    noise.connect(noiseFilter).connect(noiseGain).connect(filter);
+    noise.connect(noiseFilter);
+    noiseFilter.connect(noiseGain);
+    noiseGain.connect(filter);
 
     sources=[bass,charge,shimmer,lfo,noise];
     sources.forEach(source=>{try{source.start(startTime);}catch(error){}});
   };
 
-  hold.addEventListener('pointerdown',startSound,{passive:true});
+  hold.addEventListener('pointerdown',event=>{
+    if(event.button!==0)return;
+    pressed=true;
+    startSound();
+  },{passive:true});
   document.addEventListener('pointerup',()=>stopSound(),true);
   document.addEventListener('pointercancel',()=>stopSound(true),true);
   hold.addEventListener('lostpointercapture',()=>stopSound(),true);
 
   hold.addEventListener('keydown',event=>{
-    if((event.key===' '||event.key==='Enter')&&!event.repeat)startSound(event);
+    if((event.key===' '||event.key==='Enter')&&!event.repeat){
+      pressed=true;
+      startSound();
+    }
   });
   hold.addEventListener('keyup',event=>{
     if(event.key===' '||event.key==='Enter')stopSound();
