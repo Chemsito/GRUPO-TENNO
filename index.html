@@ -16,8 +16,75 @@
   <link rel="preload" href="assets/grupo-tenno-logo.webp" as="image">
   <link rel="preload" href="assets/fundador-aaron-diaz.webp?v=2" as="image" type="image/webp">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portal.css?v=1">
+  <script>
+    try{
+      const params=new URLSearchParams(location.search);
+      const introForced=params.get('intro')==='1';
+      if(introForced)sessionStorage.removeItem('tenno-entry-seen');
+      if(!introForced&&sessionStorage.getItem('tenno-entry-seen')==='1')document.documentElement.classList.add('portal-skip');
+    }catch(error){}
+  </script>
 </head>
 <body>
+  <div class="entry-portal" id="entry-portal" role="dialog" aria-modal="true" aria-labelledby="portal-title" aria-describedby="portal-instruction">
+    <div class="portal-backdrop" aria-hidden="true"></div>
+    <div class="portal-grid" aria-hidden="true"></div>
+    <div class="portal-orbit" aria-hidden="true"></div>
+    <div class="portal-rays" aria-hidden="true"></div>
+    <div class="portal-flare" aria-hidden="true"></div>
+
+    <div class="portal-shell">
+      <div class="portal-brand" aria-hidden="true">
+        <strong>GRUPO TENNO</strong>
+        <span>DIRECCIÓN INTEGRAL DE MARCAS</span>
+      </div>
+
+      <div class="portal-network" aria-hidden="true">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="50" y1="50" x2="50" y2="5"></line>
+          <line x1="50" y1="50" x2="91" y2="37"></line>
+          <line x1="50" y1="50" x2="75" y2="88"></line>
+          <line x1="50" y1="50" x2="25" y2="88"></line>
+          <line x1="50" y1="50" x2="9" y2="37"></line>
+        </svg>
+        <span class="portal-node">ESTRATEGIA</span>
+        <span class="portal-node">GESTIÓN</span>
+        <span class="portal-node">CONTROL</span>
+        <span class="portal-node">MEDICIÓN</span>
+        <span class="portal-node">CRECIMIENTO</span>
+      </div>
+
+      <div class="portal-core-wrap">
+        <button class="portal-hold" id="portal-hold" type="button" aria-label="Mantén presionado para ingresar a Grupo Tenno">
+          <svg class="portal-progress-svg" viewBox="0 0 194 194" aria-hidden="true">
+            <circle class="portal-progress-track" cx="97" cy="97" r="86"></circle>
+            <circle class="portal-progress-value" cx="97" cy="97" r="86"></circle>
+          </svg>
+          <span class="portal-core">
+            <span>
+              <img src="assets/grupo-tenno-mark.webp" alt="">
+              <strong>GRUPO TENNO</strong>
+              <small>NÚCLEO CENTRAL</small>
+            </span>
+          </span>
+        </button>
+      </div>
+
+      <div class="portal-copy">
+        <p class="portal-kicker">SISTEMA DE DIRECCIÓN · ACCESO</p>
+        <h1 class="portal-title" id="portal-title">Mantén presionado<br>para ingresar.</h1>
+        <p class="portal-instruction" id="portal-instruction">Activa el núcleo central y conecta el sistema de Grupo Tenno.</p>
+        <div class="portal-status" id="portal-status" aria-live="polite">SISTEMA LISTO</div>
+      </div>
+
+      <button class="portal-skip-button" id="portal-skip-button" type="button">Entrar sin animación →</button>
+      <span class="portal-count" aria-hidden="true">GT / ACCESS 01</span>
+    </div>
+    <div class="portal-transition" aria-hidden="true"></div>
+  </div>
+  <noscript><style>.entry-portal{display:none!important}</style></noscript>
+
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="site-header" id="inicio">
@@ -203,6 +270,6 @@
     <div class="container footer-bottom"><span>© <span id="year"></span> Grupo Tenno. Todos los derechos reservados.</span><span>Perú</span></div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
