@@ -1,276 +1,469 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-PE">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#25282a">
-  <meta name="description" content="Grupo Tenno dirige, administra y desarrolla marcas mediante una gestión integral de estrategia, operaciones, finanzas, logística, ventas, marketing, innovación y soporte.">
-  <meta name="keywords" content="Grupo Tenno, Arequipa, gestión empresarial, administración, Misti Glass, Reserva Aqueris, Kantu Floral, Bocatto">
-  <meta property="og:title" content="Grupo Tenno | Diferentes marcas, una misma visión">
-  <meta property="og:description" content="Dirección integral para crear, gestionar, medir y hacer crecer marcas.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Grupo Tenno · Dirección integral de marcas</title>
+  <meta name="description" content="Grupo Tenno dirige, administra y desarrolla marcas mediante una gestión integral de estrategia, operaciones, finanzas, logística, ventas, marketing, innovación y soporte. Diferentes marcas, una misma visión.">
+  <meta name="keywords" content="Grupo Tenno, Arequipa, Perú, gestión empresarial, administración, dirección de marcas, Misti Glass, Reserva Aqueris, Kantu Floral, Bocatto">
+  <meta name="author" content="Grupo Tenno">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://chemsito.github.io/GRUPO-TENNO/">
+  <meta name="theme-color" content="#0b0c0d">
+  <meta name="color-scheme" content="dark light">
+
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/grupo-tenno-logo.webp">
+  <meta property="og:site_name" content="Grupo Tenno">
   <meta property="og:locale" content="es_PE">
-  <title>Grupo Tenno | Dirección integral de marcas</title>
-  <link rel="icon" href="assets/grupo-tenno-mark.webp" type="image/webp">
-  <link rel="preload" href="assets/grupo-tenno-logo.webp" as="image">
-  <link rel="preload" href="assets/fundador-aaron-diaz.webp?v=2" as="image" type="image/webp">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="portal.css?v=1">
-  <script>
-    try{
-      const params=new URLSearchParams(location.search);
-      const introForced=params.get('intro')==='1';
-      if(introForced)sessionStorage.removeItem('tenno-entry-seen');
-      if(!introForced&&sessionStorage.getItem('tenno-entry-seen')==='1')document.documentElement.classList.add('portal-skip');
-    }catch(error){}
+  <meta property="og:url" content="https://chemsito.github.io/GRUPO-TENNO/">
+  <meta property="og:title" content="Grupo Tenno · Diferentes marcas, una misma visión">
+  <meta property="og:description" content="Dirección integral para crear, gestionar, medir y hacer crecer marcas: Misti Glass, Reserva Aqueris, Kantu Floral y Bocatto.">
+  <meta property="og:image" content="https://chemsito.github.io/GRUPO-TENNO/assets/og-grupo-tenno.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Grupo Tenno — Diferentes marcas, una misma visión">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Grupo Tenno · Diferentes marcas, una misma visión">
+  <meta name="twitter:description" content="Dirección integral para crear, gestionar, medir y hacer crecer marcas.">
+  <meta name="twitter:image" content="https://chemsito.github.io/GRUPO-TENNO/assets/og-grupo-tenno.jpg">
+
+  <link rel="icon" href="assets/grupo-tenno-mark.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/grupo-tenno-mark.webp" type="image/webp" sizes="112x112">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script>document.documentElement.classList.add('js')</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://chemsito.github.io/GRUPO-TENNO/#organizacion",
+        "name": "Grupo Tenno",
+        "url": "https://chemsito.github.io/GRUPO-TENNO/",
+        "logo": "https://chemsito.github.io/GRUPO-TENNO/assets/grupo-tenno-logo.webp",
+        "image": "https://chemsito.github.io/GRUPO-TENNO/assets/og-grupo-tenno.jpg",
+        "slogan": "Diferentes marcas, una misma visión.",
+        "description": "Grupo Tenno centraliza la dirección, administración, supervisión y crecimiento de negocios con identidad propia, integrando estrategia, operaciones, medición y ejecución.",
+        "email": "grupotenno@gmail.com",
+        "telephone": "+51 967 539 019",
+        "address": { "@type": "PostalAddress", "addressCountry": "PE" },
+        "areaServed": "PE",
+        "founder": { "@id": "https://chemsito.github.io/GRUPO-TENNO/#fundador" },
+        "knowsAbout": ["Dirección y estrategia", "Administración y finanzas", "Operaciones y logística", "Ventas y experiencia del cliente", "Marketing y comunicación", "Innovación y tecnología", "Supervisión y control", "Mejora continua"],
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "Asociaciones y alianzas", "email": "grupotenno@gmail.com", "telephone": "+51 967 539 019", "availableLanguage": "es" }
+        ],
+        "subOrganization": [
+          { "@type": "Organization", "name": "Vidriería Misti Glass", "url": "https://certus-domain.my.canva.site/vidrieria-misti-glass", "sameAs": ["https://www.facebook.com/profile.php?id=61575286956871"] },
+          { "@type": "Organization", "name": "Reserva Aqueris", "url": "https://chemsito.github.io/Reserva-Aqueris/", "sameAs": ["https://www.facebook.com/profile.php?id=61572569202541", "https://www.instagram.com/reserva_aqueris/"] },
+          { "@type": "Organization", "name": "Kantu Floral", "url": "https://chemsito.github.io/Kantu-Floral/", "sameAs": ["https://www.instagram.com/kantu_floral/", "https://www.facebook.com/profile.php?id=61590177373176"] },
+          { "@type": "Organization", "name": "Bocatto", "url": "https://chemsito.github.io/Bocatto/", "sameAs": ["https://www.instagram.com/world_bocatto/", "https://www.facebook.com/profile.php?id=61575980401248"] }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://chemsito.github.io/GRUPO-TENNO/#fundador",
+        "name": "Aaron Díaz",
+        "jobTitle": "Fundador de Grupo Tenno",
+        "description": "Técnico en Administración de Empresas con experiencia en gestión operativa, logística, control y seguimiento de procesos, supervisión y análisis de datos.",
+        "image": "https://chemsito.github.io/GRUPO-TENNO/assets/fundador-aaron-diaz.webp",
+        "worksFor": { "@id": "https://chemsito.github.io/GRUPO-TENNO/#organizacion" },
+        "sameAs": ["https://www.linkedin.com/in/aaron-diaz-q22", "https://github.com/Chemsito"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://chemsito.github.io/GRUPO-TENNO/#sitio",
+        "url": "https://chemsito.github.io/GRUPO-TENNO/",
+        "name": "Grupo Tenno",
+        "inLanguage": "es-PE",
+        "publisher": { "@id": "https://chemsito.github.io/GRUPO-TENNO/#organizacion" }
+      }
+    ]
+  }
   </script>
 </head>
 <body>
-  <div class="entry-portal" id="entry-portal" role="dialog" aria-modal="true" aria-labelledby="portal-title" aria-describedby="portal-instruction">
-    <div class="portal-backdrop" aria-hidden="true"></div>
-    <div class="portal-grid" aria-hidden="true"></div>
-    <div class="portal-orbit" aria-hidden="true"></div>
-    <div class="portal-rays" aria-hidden="true"></div>
-    <div class="portal-flare" aria-hidden="true"></div>
-
-    <div class="portal-shell">
-      <div class="portal-brand" aria-hidden="true">
-        <strong>GRUPO TENNO</strong>
-        <span>DIRECCIÓN INTEGRAL DE MARCAS</span>
-      </div>
-
-      <div class="portal-network" aria-hidden="true">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="50" y1="50" x2="50" y2="5"></line>
-          <line x1="50" y1="50" x2="91" y2="37"></line>
-          <line x1="50" y1="50" x2="75" y2="88"></line>
-          <line x1="50" y1="50" x2="25" y2="88"></line>
-          <line x1="50" y1="50" x2="9" y2="37"></line>
-        </svg>
-        <span class="portal-node">ESTRATEGIA</span>
-        <span class="portal-node">GESTIÓN</span>
-        <span class="portal-node">CONTROL</span>
-        <span class="portal-node">MEDICIÓN</span>
-        <span class="portal-node">CRECIMIENTO</span>
-      </div>
-
-      <div class="portal-core-wrap">
-        <button class="portal-hold" id="portal-hold" type="button" aria-label="Mantén presionado para ingresar a Grupo Tenno">
-          <svg class="portal-progress-svg" viewBox="0 0 194 194" aria-hidden="true">
-            <circle class="portal-progress-track" cx="97" cy="97" r="86"></circle>
-            <circle class="portal-progress-value" cx="97" cy="97" r="86"></circle>
-          </svg>
-          <span class="portal-core">
-            <span>
-              <img src="assets/grupo-tenno-mark.webp" alt="">
-              <strong>GRUPO TENNO</strong>
-              <small>NÚCLEO CENTRAL</small>
-            </span>
-          </span>
-        </button>
-      </div>
-
-      <div class="portal-copy">
-        <p class="portal-kicker">SISTEMA DE DIRECCIÓN · ACCESO</p>
-        <h1 class="portal-title" id="portal-title">Mantén presionado<br>para ingresar.</h1>
-        <p class="portal-instruction" id="portal-instruction">Activa el núcleo central y conecta el sistema de Grupo Tenno.</p>
-        <div class="portal-status" id="portal-status" aria-live="polite">SISTEMA LISTO</div>
-      </div>
-
-      <button class="portal-skip-button" id="portal-skip-button" type="button">Entrar sin animación →</button>
-      <span class="portal-count" aria-hidden="true">GT / ACCESS 01</span>
-    </div>
-    <div class="portal-transition" aria-hidden="true"></div>
-  </div>
-  <noscript><style>.entry-portal{display:none!important}</style></noscript>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="mark" viewBox="-56 -56 112 112">
+      <g transform="translate(0 -4)" fill="currentColor">
+        <g stroke="currentColor" stroke-width="3.2" stroke-linecap="round">
+          <line x1="0" y1="0" x2="-36" y2="-35"/><line x1="0" y1="0" x2="35" y2="-39"/><line x1="0" y1="0" x2="-36" y2="38"/><line x1="0" y1="0" x2="6" y2="46"/><line x1="0" y1="0" x2="35" y2="24"/>
+        </g>
+        <circle r="11.5"/><circle cx="-36" cy="-35" r="6"/><circle cx="35" cy="-39" r="10"/><circle cx="-36" cy="38" r="12.5"/><circle cx="6" cy="46" r="9"/><circle cx="35" cy="24" r="7"/>
+      </g>
+    </symbol>
+  </svg>
 
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
 
   <header class="site-header" id="inicio">
-    <div class="container nav-wrap">
-      <a class="brand" href="#inicio" aria-label="Grupo Tenno, inicio">
-        <img src="assets/grupo-tenno-mark.webp" alt="" width="42" height="42">
-        <span>GRUPO TENNO</span>
+    <div class="wrap nav-bar">
+      <a class="logo" href="#inicio" aria-label="Grupo Tenno, ir al inicio">
+        <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+        <span class="brand-name">Grupo Tenno</span>
       </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
       <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
-        <a href="#nosotros">Nosotros</a>
-        <a href="#gestion">Qué hacemos</a>
-        <a href="#marcas">Marcas</a>
-        <a href="#vision">Misión y visión</a>
-        <a href="#fundador">Fundador</a>
-        <a class="nav-cta" href="#alianza">Asóciate</a>
+        <ul>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#gestion">Qué hacemos</a></li>
+          <li><a href="#marcas">Marcas</a></li>
+          <li><a href="#vision">Principios</a></li>
+          <li><a href="#fundador">Fundador</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a class="btn btn-light nav-cta" href="#alianza">Asóciate <span aria-hidden="true">→</span></a>
       </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Abrir menú</span><span class="menu-lines" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
 
   <main id="contenido">
-    <section class="hero section-dark">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">DIRECCIÓN INTEGRAL DE MARCAS</p>
-          <h1>Una visión.<br><span>Marcas que crecen.</span><br>Gestión que conecta todo.</h1>
-          <p class="hero-lead">Grupo Tenno centraliza la dirección, administración, supervisión y crecimiento de negocios con identidad propia. Integramos estrategia, operaciones, medición y ejecución para que cada marca avance con orden, consistencia y propósito.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#marcas">Conoce nuestras marcas</a>
-            <a class="button button-ghost" href="#alianza">Quiero asociarme</a>
-          </div>
-          <div class="hero-tags" aria-label="Áreas principales">
-            <span>Gestión</span><span>Supervisión</span><span>Medición</span><span>Crecimiento</span><span>Innovación</span>
-          </div>
-        </div>
-
-        <div class="hero-visual reveal" aria-label="Grupo Tenno conecta las marcas de su portafolio actual">
-          <div class="orbit-card orbit-tenno">
-            <img src="assets/grupo-tenno-mark.webp" alt="Logo de Grupo Tenno">
-            <strong>GRUPO TENNO</strong>
-            <small>Dirección central</small>
-          </div>
-          <div class="orbit-line line-a"></div>
-          <div class="orbit-line line-b"></div>
-          <div class="orbit-line line-c"></div>
-          <div class="orbit-line line-d"></div>
-          <div class="orbit-brand brand-misti"><span>MG</span><strong>Misti Glass</strong><small>Vidriería</small></div>
-          <div class="orbit-brand brand-aqueris"><span>RA</span><strong>Reserva Aqueris</strong><small>Vinos</small></div>
-          <div class="orbit-brand brand-kantu"><span>KF</span><strong>Kantu Floral</strong><small>Florería</small></div>
-          <div class="orbit-brand brand-bocatto"><span>BO</span><strong>Bocatto</strong><small>Eventos</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="intro" id="nosotros">
-      <div class="container intro-grid">
-        <div class="section-heading reveal">
-          <p class="eyebrow dark">GRUPO TENNO</p>
-          <h2>Diferentes marcas,<br>una misma visión.</h2>
-        </div>
-        <div class="intro-copy reveal">
-          <p class="big-copy">No somos una marca que reemplaza a las demás. Somos la estructura que las organiza, las conecta y las impulsa.</p>
-          <p>Grupo Tenno trabaja detrás de cada proyecto para transformar objetivos en acciones concretas: planificamos, coordinamos recursos, medimos resultados, controlamos avances, fortalecemos procesos y acompañamos la evolución comercial de cada negocio.</p>
-          <div class="fact-row">
-            <div><strong>360°</strong><span>gestión integral</span></div>
-            <div><strong>KPIs</strong><span>decisiones medibles</span></div>
-            <div><strong>+</strong><span>portafolio en expansión</span></div>
+    <!-- HERO -->
+    <section class="hero dark" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker" data-load><span class="dot"></span>Dirección integral de marcas · Perú</p>
+          <h1 id="hero-title" class="display">
+            <span class="line"><span data-load>Una visión.</span></span>
+            <span class="line"><span data-load>Marcas que <em>crecen.</em></span></span>
+            <span class="line"><span data-load class="dim">Gestión que conecta todo.</span></span>
+          </h1>
+          <p class="lead" data-load>Grupo Tenno centraliza la dirección, administración, supervisión y crecimiento de negocios con identidad propia. Integramos estrategia, operaciones, medición y ejecución para que cada marca avance con orden, consistencia y propósito.</p>
+          <div class="actions" data-load>
+            <a class="btn btn-light" href="#marcas">Conoce nuestras marcas <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="#alianza">Quiero asociarme</a>
           </div>
         </div>
+
+        <figure class="core" aria-label="Diagrama: Grupo Tenno como núcleo central que conecta estrategia, gestión, control, medición y crecimiento">
+          <svg class="core-svg" viewBox="0 0 600 600" role="img" aria-hidden="true">
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#d8b67a" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#d8b67a" stop-opacity="0"/>
+              </radialGradient>
+              <path id="ring-path" d="M300,300 m-262,0 a262,262 0 1,1 524,0 a262,262 0 1,1 -524,0"/>
+            </defs>
+            <circle cx="300" cy="300" r="220" fill="url(#glow)"/>
+            <g class="rings">
+              <circle cx="300" cy="300" r="290" class="ring ring-a"/>
+              <circle cx="300" cy="300" r="232" class="ring ring-b"/>
+              <circle cx="300" cy="300" r="170" class="ring ring-c"/>
+            </g>
+            <g class="orbit-text">
+              <text><textPath href="#ring-path" startOffset="0">MISTI GLASS · RESERVA AQUERIS · KANTU FLORAL · BOCATTO · MISTI GLASS · RESERVA AQUERIS · KANTU FLORAL · BOCATTO ·</textPath></text>
+            </g>
+            <g class="net" transform="translate(300 290)">
+              <g class="links">
+                <line pathLength="1" x1="0" y1="0" x2="134" y2="-150"/>
+                <line pathLength="1" x1="0" y1="0" x2="134" y2="92"/>
+                <line pathLength="1" x1="0" y1="0" x2="23" y2="176"/>
+                <line pathLength="1" x1="0" y1="0" x2="-138" y2="146"/>
+                <line pathLength="1" x1="0" y1="0" x2="-138" y2="-134"/>
+              </g>
+              <g class="pulses">
+                <circle r="3.2"><animateMotion dur="3.2s" repeatCount="indefinite" path="M0,0 L134,-150"/></circle>
+                <circle r="3.2"><animateMotion dur="2.8s" begin=".6s" repeatCount="indefinite" path="M0,0 L134,92"/></circle>
+                <circle r="3.2"><animateMotion dur="3.6s" begin="1.1s" repeatCount="indefinite" path="M0,0 L23,176"/></circle>
+                <circle r="3.2"><animateMotion dur="3s" begin=".3s" repeatCount="indefinite" path="M0,0 L-138,146"/></circle>
+                <circle r="3.2"><animateMotion dur="3.4s" begin="1.6s" repeatCount="indefinite" path="M0,0 L-138,-134"/></circle>
+              </g>
+              <g class="nodes">
+                <g class="node n1" transform="translate(134 -150)"><circle r="38"/><text x="52" y="5">ESTRATEGIA</text></g>
+                <g class="node n2" transform="translate(134 92)"><circle r="26"/><text x="40" y="5">GESTIÓN</text></g>
+                <g class="node n3" transform="translate(23 176)"><circle r="33"/><text x="48" y="5">CONTROL</text></g>
+                <g class="node n4" transform="translate(-138 146)"><circle r="46"/><text x="-60" y="5" text-anchor="end">MEDICIÓN</text></g>
+                <g class="node n5" transform="translate(-138 -134)"><circle r="22"/><text x="-36" y="5" text-anchor="end">CRECIMIENTO</text></g>
+              </g>
+              <g class="hub"><circle class="hub-halo" r="72"/><circle class="hub-core" r="46"/></g>
+            </g>
+          </svg>
+          <figcaption class="core-caption"><span>Núcleo central</span><span>GT · 01</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Gestión</span><span>Supervisión</span><span>Medición</span><span>Crecimiento</span><span>Innovación</span><span>Estrategia</span><span>Control</span>
+          <span>Gestión</span><span>Supervisión</span><span>Medición</span><span>Crecimiento</span><span>Innovación</span><span>Estrategia</span><span>Control</span>
+        </div>
       </div>
     </section>
 
-    <section class="management section-soft" id="gestion">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow dark">QUÉ HACEMOS</p>
-          <h2>Una sola dirección para coordinar<br>cada parte del negocio.</h2>
-          <p>Centralizamos las áreas clave para que cada marca mantenga su identidad mientras opera con una visión empresarial compartida, procesos medibles y objetivos claros.</p>
+    <!-- NOSOTROS -->
+    <section class="section paper" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="wrap">
+        <div class="section-index reveal"><span>01</span><span>Quiénes somos</span></div>
+        <div class="about-grid">
+          <h2 id="nosotros-title" class="title reveal">Diferentes marcas, <em>una misma visión.</em></h2>
+          <div class="about-copy">
+            <p class="statement reveal">No somos una marca que reemplaza a las demás. Somos la estructura que <strong>las organiza, las conecta y las impulsa.</strong></p>
+            <p class="reveal">Grupo Tenno trabaja detrás de cada proyecto para transformar objetivos en acciones concretas: planificamos, coordinamos recursos, medimos resultados, controlamos avances, fortalecemos procesos y acompañamos la evolución comercial de cada negocio.</p>
+          </div>
         </div>
 
-        <div class="capability-grid">
-          <article class="capability-card reveal"><div class="cap-number">01</div><h3>Dirección & estrategia</h3><p>Definimos prioridades, objetivos, planes de acción y criterios para el desarrollo sostenido de cada marca.</p></article>
-          <article class="capability-card reveal"><div class="cap-number">02</div><h3>Administración & finanzas</h3><p>Organizamos recursos, presupuestos, control de gastos, seguimiento financiero y decisiones administrativas.</p></article>
-          <article class="capability-card reveal"><div class="cap-number">03</div><h3>Operaciones & logística</h3><p>Coordinamos abastecimiento, proveedores, procesos, entregas y necesidades operativas de cada proyecto.</p></article>
-          <article class="capability-card reveal"><div class="cap-number">04</div><h3>Ventas & experiencia</h3><p>Acompañamos el proceso comercial, la atención, el seguimiento de clientes y la mejora de la experiencia final.</p></article>
-          <article class="capability-card reveal"><div class="cap-number">05</div><h3>Marketing & comunicación</h3><p>Construimos presencia, campañas, contenidos y lineamientos que hacen visible la propuesta de cada marca.</p></article>
-          <article class="capability-card reveal"><div class="cap-number">06</div><h3>Innovación & tecnología</h3><p>Buscamos herramientas, canales y soluciones digitales que mejoren la gestión y abran nuevas oportunidades.</p></article>
-          <article class="capability-card reveal"><div class="cap-number">07</div><h3>Supervisión & control</h3><p>Monitoreamos avances, indicadores e incidencias para detectar necesidades y mantener el rumbo de cada negocio.</p></article>
-          <article class="capability-card reveal"><div class="cap-number">08</div><h3>Soporte & mejora continua</h3><p>Resolvemos necesidades transversales y refinamos procesos para sostener una operación cada vez más eficiente.</p></article>
-        </div>
+        <dl class="stats">
+          <div class="stat reveal"><dt>Gestión integral</dt><dd>360°</dd></div>
+          <div class="stat reveal"><dt>Decisiones medibles</dt><dd>KPIs</dd></div>
+          <div class="stat reveal"><dt>Marcas en el portafolio actual</dt><dd data-count="4">04</dd></div>
+          <div class="stat reveal"><dt>Áreas de gestión integradas</dt><dd data-count="8">08</dd></div>
+        </dl>
+
+        <h3 class="method-label reveal" id="metodo-title">Cómo trabajamos</h3>
+        <ol class="method" aria-labelledby="metodo-title">
+          <li class="reveal"><span>01</span>Planificamos</li>
+          <li class="reveal"><span>02</span>Coordinamos recursos</li>
+          <li class="reveal"><span>03</span>Medimos resultados</li>
+          <li class="reveal"><span>04</span>Controlamos avances</li>
+          <li class="reveal"><span>05</span>Fortalecemos procesos</li>
+          <li class="reveal"><span>06</span>Acompañamos la evolución</li>
+        </ol>
       </div>
     </section>
 
-    <section class="brands" id="marcas">
-      <div class="container">
-        <div class="section-heading split reveal">
-          <div><p class="eyebrow dark">PORTAFOLIO ACTUAL</p><h2>Identidades distintas.<br>Gestión compartida.</h2></div>
-          <p>Cada proyecto conserva su propia personalidad, público y propuesta. Grupo Tenno aporta la estructura administrativa y estratégica que permite desarrollarlos de manera coordinada, mientras seguimos abiertos a incorporar nuevas marcas y oportunidades.</p>
+    <!-- QUÉ HACEMOS -->
+    <section class="section paper-2" id="gestion" aria-labelledby="gestion-title">
+      <div class="wrap services-grid">
+        <div class="services-head">
+          <div class="section-index reveal"><span>02</span><span>Qué hacemos</span></div>
+          <h2 id="gestion-title" class="title reveal">Una sola dirección para coordinar <em>cada parte del negocio.</em></h2>
+          <p class="reveal">Centralizamos las áreas clave para que cada marca mantenga su identidad mientras opera con una visión empresarial compartida, procesos medibles y objetivos claros.</p>
+          <a class="link-arrow reveal" href="#alianza">Conversemos sobre tu negocio <span aria-hidden="true">→</span></a>
+        </div>
+        <ol class="services">
+          <li class="service reveal"><span class="service-n">01</span><h3>Dirección &amp; estrategia</h3><p>Definimos prioridades, objetivos, planes de acción y criterios para el desarrollo sostenido de cada marca.</p></li>
+          <li class="service reveal"><span class="service-n">02</span><h3>Administración &amp; finanzas</h3><p>Organizamos recursos, presupuestos, control de gastos, seguimiento financiero y decisiones administrativas.</p></li>
+          <li class="service reveal"><span class="service-n">03</span><h3>Operaciones &amp; logística</h3><p>Coordinamos abastecimiento, proveedores, procesos, entregas y necesidades operativas de cada proyecto.</p></li>
+          <li class="service reveal"><span class="service-n">04</span><h3>Ventas &amp; experiencia</h3><p>Acompañamos el proceso comercial, la atención, el seguimiento de clientes y la mejora de la experiencia final.</p></li>
+          <li class="service reveal"><span class="service-n">05</span><h3>Marketing &amp; comunicación</h3><p>Construimos presencia, campañas, contenidos y lineamientos que hacen visible la propuesta de cada marca.</p></li>
+          <li class="service reveal"><span class="service-n">06</span><h3>Innovación &amp; tecnología</h3><p>Buscamos herramientas, canales y soluciones digitales que mejoren la gestión y abran nuevas oportunidades.</p></li>
+          <li class="service reveal"><span class="service-n">07</span><h3>Supervisión &amp; control</h3><p>Monitoreamos avances, indicadores e incidencias para detectar necesidades y mantener el rumbo de cada negocio.</p></li>
+          <li class="service reveal"><span class="service-n">08</span><h3>Soporte &amp; mejora continua</h3><p>Resolvemos necesidades transversales y refinamos procesos para sostener una operación cada vez más eficiente.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- MARCAS -->
+    <section class="section dark" id="marcas" aria-labelledby="marcas-title">
+      <div class="wrap">
+        <div class="split-head">
+          <div>
+            <div class="section-index reveal"><span>03</span><span>Portafolio actual</span></div>
+            <h2 id="marcas-title" class="title reveal">Identidades distintas. <em>Gestión compartida.</em></h2>
+          </div>
+          <p class="reveal">Cada proyecto conserva su propia personalidad, público y propuesta. Grupo Tenno aporta la estructura administrativa y estratégica que permite desarrollarlos de manera coordinada, mientras seguimos abiertos a incorporar nuevas marcas y oportunidades.</p>
         </div>
 
-        <div class="brand-grid">
-          <article class="brand-card misti reveal">
-            <div class="brand-logo-wrap"><img src="assets/misti-glass.webp?v=2" alt="Logo de Vidriería Misti Glass" loading="lazy"></div>
-            <div class="brand-card-copy"><div class="brand-label">SOLUCIONES EN VIDRIO</div><h3>Vidriería Misti Glass</h3><p>Trabajos especializados y soluciones en vidrio para hogares, negocios y proyectos, con atención a medida y enfoque en acabados funcionales.</p><div class="brand-links"><a href="https://certus-domain.my.canva.site/vidrieria-misti-glass" target="_blank" rel="noopener">Sitio web <span>↗</span></a><a href="https://www.facebook.com/profile.php?id=61575286956871" target="_blank" rel="noopener">Facebook <span>↗</span></a></div></div>
+        <div class="brands">
+          <article class="brand reveal" style="--tone:#e2733a">
+            <div class="brand-top">
+              <img class="brand-logo" src="assets/misti-glass.webp" alt="Logo de Vidriería Misti Glass" width="480" height="480" loading="lazy" decoding="async">
+              <span class="brand-tag">Soluciones en vidrio</span>
+            </div>
+            <h3>Vidriería Misti Glass</h3>
+            <p>Trabajos especializados y soluciones en vidrio para hogares, negocios y proyectos, con atención a medida y enfoque en acabados funcionales.</p>
+            <ul class="brand-links">
+              <li><a href="https://certus-domain.my.canva.site/vidrieria-misti-glass" target="_blank" rel="noopener">Sitio web<span class="sr-only"> de Misti Glass (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61575286956871" target="_blank" rel="noopener">Facebook<span class="sr-only"> de Misti Glass (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+            </ul>
           </article>
 
-          <article class="brand-card aqueris reveal">
-            <div class="brand-logo-wrap"><img src="https://chemsito.github.io/Reserva-Aqueris/assets/logo-aqueris-reserve.webp" alt="Logo oficial de Reserva Aqueris" loading="lazy"></div>
-            <div class="brand-card-copy"><div class="brand-label">SELECCIÓN DE VINOS</div><h3>Reserva Aqueris</h3><p>Una propuesta dedicada a seleccionar vinos para compartir, celebrar y acompañar momentos especiales, con atención cercana y personalizada.</p><div class="brand-links"><a href="https://chemsito.github.io/Reserva-Aqueris/" target="_blank" rel="noopener">Sitio web <span>↗</span></a><a href="https://www.facebook.com/profile.php?id=61572569202541" target="_blank" rel="noopener">Facebook <span>↗</span></a><a href="https://www.instagram.com/reserva_aqueris/" target="_blank" rel="noopener">Instagram <span>↗</span></a></div></div>
+          <article class="brand reveal" style="--tone:#b2475a">
+            <div class="brand-top">
+              <img class="brand-logo" src="assets/reserva-aqueris.webp" alt="Logo oficial de Reserva Aqueris" width="180" height="180" loading="lazy" decoding="async">
+              <span class="brand-tag">Selección de vinos</span>
+            </div>
+            <h3>Reserva Aqueris</h3>
+            <p>Una propuesta dedicada a seleccionar vinos para compartir, celebrar y acompañar momentos especiales, con atención cercana y personalizada.</p>
+            <ul class="brand-links">
+              <li><a href="https://chemsito.github.io/Reserva-Aqueris/" target="_blank" rel="noopener">Sitio web<span class="sr-only"> de Reserva Aqueris (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61572569202541" target="_blank" rel="noopener">Facebook<span class="sr-only"> de Reserva Aqueris (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.instagram.com/reserva_aqueris/" target="_blank" rel="noopener">Instagram<span class="sr-only"> de Reserva Aqueris (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+            </ul>
           </article>
 
-          <article class="brand-card kantu reveal">
-            <div class="brand-logo-wrap"><img src="assets/kantu-floral.webp?v=2" alt="Logo de Kantu Floral" loading="lazy"></div>
-            <div class="brand-card-copy"><div class="brand-label">FLORES QUE CUENTAN HISTORIAS</div><h3>Kantu Floral</h3><p>Flores, detalles y arreglos creados para expresar emociones y acompañar ocasiones especiales con una identidad cálida y cuidada.</p><div class="brand-links"><a href="https://chemsito.github.io/Kantu-Floral/" target="_blank" rel="noopener">Sitio web <span>↗</span></a><a href="https://www.instagram.com/kantu_floral/" target="_blank" rel="noopener">Instagram <span>↗</span></a><a href="https://www.facebook.com/profile.php?id=61590177373176" target="_blank" rel="noopener">Facebook <span>↗</span></a></div></div>
+          <article class="brand reveal" style="--tone:#e58aa6">
+            <div class="brand-top">
+              <img class="brand-logo" src="assets/kantu-floral.webp" alt="Logo de Kantu Floral" width="480" height="480" loading="lazy" decoding="async">
+              <span class="brand-tag">Flores que cuentan historias</span>
+            </div>
+            <h3>Kantu Floral</h3>
+            <p>Flores, detalles y arreglos creados para expresar emociones y acompañar ocasiones especiales con una identidad cálida y cuidada.</p>
+            <ul class="brand-links">
+              <li><a href="https://chemsito.github.io/Kantu-Floral/" target="_blank" rel="noopener">Sitio web<span class="sr-only"> de Kantu Floral (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.instagram.com/kantu_floral/" target="_blank" rel="noopener">Instagram<span class="sr-only"> de Kantu Floral (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61590177373176" target="_blank" rel="noopener">Facebook<span class="sr-only"> de Kantu Floral (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+            </ul>
           </article>
 
-          <article class="brand-card bocatto reveal">
-            <div class="brand-logo-wrap"><img src="assets/bocatto.webp?v=2" alt="Logo de Bocatto" loading="lazy"></div>
-            <div class="brand-card-copy"><div class="brand-label">BOCADITOS PARA EVENTOS</div><h3>Bocatto</h3><p>Una propuesta creada para disfrutar y acompañar reuniones y celebraciones con bocaditos pensados para diferentes momentos y eventos.</p><div class="brand-links"><a href="https://chemsito.github.io/Bocatto/" target="_blank" rel="noopener">Sitio web <span>↗</span></a><a href="https://www.instagram.com/world_bocatto/" target="_blank" rel="noopener">Instagram <span>↗</span></a><a href="https://www.facebook.com/profile.php?id=61575980401248" target="_blank" rel="noopener">Facebook <span>↗</span></a></div></div>
+          <article class="brand reveal" style="--tone:#c9a46a">
+            <div class="brand-top">
+              <img class="brand-logo" src="assets/bocatto.webp" alt="Logo de Bocatto" width="480" height="480" loading="lazy" decoding="async">
+              <span class="brand-tag">Bocaditos para eventos</span>
+            </div>
+            <h3>Bocatto</h3>
+            <p>Una propuesta creada para disfrutar y acompañar reuniones y celebraciones con bocaditos pensados para diferentes momentos y eventos.</p>
+            <ul class="brand-links">
+              <li><a href="https://chemsito.github.io/Bocatto/" target="_blank" rel="noopener">Sitio web<span class="sr-only"> de Bocatto (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.instagram.com/world_bocatto/" target="_blank" rel="noopener">Instagram<span class="sr-only"> de Bocatto (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61575980401248" target="_blank" rel="noopener">Facebook<span class="sr-only"> de Bocatto (abre en nueva pestaña)</span> <span aria-hidden="true">↗</span></a></li>
+            </ul>
+          </article>
+
+          <a class="brand brand-next reveal" href="#alianza">
+            <span class="brand-next-plus" aria-hidden="true">+</span>
+            <span class="brand-tag">Portafolio en expansión</span>
+            <strong>¿Tu marca es la siguiente?</strong>
+            <span class="brand-next-copy">Seguimos abiertos a incorporar nuevas marcas y oportunidades.</span>
+            <span class="link-arrow">Asóciate con Grupo Tenno <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCIPIOS -->
+    <section class="section paper" id="vision" aria-labelledby="vision-title">
+      <div class="wrap">
+        <div class="section-index reveal"><span>04</span><span>Propósito y dirección</span></div>
+        <h2 id="vision-title" class="title title-wide reveal">Medir, ordenar y crecer <em>con una visión de largo plazo.</em></h2>
+
+        <div class="principles">
+          <article class="principle principle-lg reveal">
+            <span class="p-label">Misión</span>
+            <p>Gestionar y fortalecer negocios mediante una dirección integral que conecte estrategia, administración, finanzas, operaciones, logística, ventas, marketing y tecnología, convirtiendo objetivos y datos en decisiones medibles y acciones concretas.</p>
+          </article>
+          <article class="principle principle-lg reveal">
+            <span class="p-label">Visión</span>
+            <p>Consolidar Grupo Tenno como una plataforma de gestión empresarial capaz de crear, incorporar y escalar marcas en distintos sectores, construyendo un portafolio sostenible, innovador y preparado para crecer.</p>
+          </article>
+          <article class="principle reveal">
+            <span class="p-label">Medición</span>
+            <p>Creemos en una gestión sustentada en indicadores, seguimiento y análisis.</p>
+          </article>
+          <article class="principle reveal">
+            <span class="p-label">Evolución</span>
+            <p>Cada proceso puede mejorar. Revisamos resultados, detectamos oportunidades y ajustamos la operación para crecer con mayor orden, eficiencia y capacidad de respuesta.</p>
           </article>
         </div>
+
+        <blockquote class="manifesto reveal">
+          <p>“No puedes controlar lo que <em>no puedes medir.</em>”</p>
+          <footer>Principio de gestión · Grupo Tenno</footer>
+        </blockquote>
       </div>
     </section>
 
-    <section class="principles" id="vision">
-      <div class="container">
-        <div class="section-heading centered reveal"><p class="eyebrow dark">PROPÓSITO Y DIRECCIÓN</p><h2>Medir, ordenar y crecer<br>con una visión de largo plazo.</h2></div>
-        <div class="principle-row">
-          <div class="principle reveal"><span>01</span><h3>Misión</h3><p>Gestionar y fortalecer negocios mediante una dirección integral que conecte estrategia, administración, finanzas, operaciones, logística, ventas, marketing y tecnología, convirtiendo objetivos y datos en decisiones medibles y acciones concretas.</p></div>
-          <div class="principle reveal"><span>02</span><h3>Visión</h3><p>Consolidar Grupo Tenno como una plataforma de gestión empresarial capaz de crear, incorporar y escalar marcas en distintos sectores, construyendo un portafolio sostenible, innovador y preparado para crecer.</p></div>
-          <div class="principle reveal"><span>03</span><h3>Medición</h3><p>Creemos en una gestión sustentada en indicadores, seguimiento y análisis. <strong>No puedes controlar lo que no puedes medir.</strong></p></div>
-          <div class="principle reveal"><span>04</span><h3>Evolución</h3><p>Cada proceso puede mejorar. Revisamos resultados, detectamos oportunidades y ajustamos la operación para crecer con mayor orden, eficiencia y capacidad de respuesta.</p></div>
+    <!-- FUNDADOR -->
+    <section class="section dark founder" id="fundador" aria-labelledby="fundador-title">
+      <div class="wrap founder-grid">
+        <figure class="founder-photo reveal">
+          <div class="photo-frame">
+            <img src="assets/fundador-aaron-diaz.webp" alt="Retrato de Aaron Díaz, fundador de Grupo Tenno" width="480" height="656" loading="lazy" decoding="async">
+          </div>
+          <figcaption><span>Fundador</span><strong>Aaron Díaz</strong></figcaption>
+        </figure>
+        <div class="founder-copy">
+          <div class="section-index reveal"><span>05</span><span>Dirección de Grupo Tenno</span></div>
+          <h2 id="fundador-title" class="title reveal">Construir marcas también significa construir <em>la estructura que las hace avanzar.</em></h2>
+          <blockquote class="founder-quote reveal"><p>“Grupo Tenno nace para organizar, conectar, medir y hacer crecer proyectos distintos bajo una misma visión de trabajo.”</p></blockquote>
+          <p class="reveal">Aaron Díaz es Técnico en Administración de Empresas y cuenta con experiencia en gestión operativa, logística, control y seguimiento de procesos, supervisión y análisis de datos. Su enfoque profesional se apoya en la organización, los indicadores, la mejora continua y herramientas como Excel y Power BI para convertir información en mejores decisiones.</p>
+          <p class="reveal">Desde la dirección de Grupo Tenno coordina la visión general y el seguimiento de las marcas, conectando decisiones administrativas, comerciales, operativas y digitales para mantener un crecimiento ordenado y coherente.</p>
+          <ul class="chips reveal" aria-label="Áreas de experiencia">
+            <li>Gestión operativa</li><li>Logística</li><li>Control de procesos</li><li>Supervisión</li><li>Análisis de datos</li><li>Excel</li><li>Power BI</li>
+          </ul>
+          <div class="founder-links reveal">
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/aaron-diaz-q22" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (abre en nueva pestaña)</span></a>
+            <a class="btn btn-ghost" href="https://github.com/Chemsito" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (abre en nueva pestaña)</span></a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="founder section-dark" id="fundador">
-      <div class="container founder-grid">
-        <div class="founder-photo reveal"><div class="photo-frame"><img src="assets/fundador-aaron-diaz.webp?v=2" alt="Aaron Díaz, fundador de Grupo Tenno" loading="eager" fetchpriority="high" decoding="async"></div><div class="photo-caption"><span>FUNDADOR</span><strong>Aaron Díaz</strong></div></div>
-        <div class="founder-copy reveal">
-          <p class="eyebrow">DIRECCIÓN DE GRUPO TENNO</p>
-          <h2>Construir marcas también significa construir la estructura que las hace avanzar.</h2>
-          <p class="quote">“Grupo Tenno nace para organizar, conectar, medir y hacer crecer proyectos distintos bajo una misma visión de trabajo.”</p>
-          <p>Aaron Díaz es Técnico en Administración de Empresas y cuenta con experiencia en gestión operativa, logística, control y seguimiento de procesos, supervisión y análisis de datos. Su enfoque profesional se apoya en la organización, los indicadores, la mejora continua y herramientas como Excel y Power BI para convertir información en mejores decisiones.</p>
-          <p>Desde la dirección de Grupo Tenno coordina la visión general y el seguimiento de las marcas, conectando decisiones administrativas, comerciales, operativas y digitales para mantener un crecimiento ordenado y coherente.</p>
-          <div class="founder-links"><a href="https://www.linkedin.com/in/aaron-diaz-q22" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/Chemsito" target="_blank" rel="noopener">GitHub ↗</a></div>
+    <!-- ALIANZA + CONTACTO -->
+    <section class="section paper contact" id="alianza" aria-labelledby="alianza-title">
+      <div class="wrap contact-grid">
+        <div class="contact-pitch">
+          <div class="section-index reveal"><span>06</span><span>Asóciate con Grupo Tenno</span></div>
+          <h2 id="alianza-title" class="title reveal">Tu negocio puede vender más <em>cuando también se gestiona mejor.</em></h2>
+          <p class="reveal">Si tienes una marca o empresa con potencial y necesitas mayor control administrativo, seguimiento de ventas, logística, finanzas, marketing, procesos o medición de resultados, conversemos. Evaluamos oportunidades de colaboración para ordenar la operación, identificar qué está funcionando y construir un plan de crecimiento con indicadores claros.</p>
+          <div class="actions reveal">
+            <a class="btn btn-dark" href="mailto:grupotenno@gmail.com?subject=Quiero%20asociarme%20con%20Grupo%20Tenno">Escribir a asociaciones <span aria-hidden="true">→</span></a>
+            <a class="btn btn-outline" href="https://wa.me/51967539019?text=Hola%20Aaron%2C%20tengo%20un%20negocio%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20una%20posible%20asociaci%C3%B3n%20con%20Grupo%20Tenno%20para%20mejorar%20su%20gesti%C3%B3n%20y%20crecimiento." target="_blank" rel="noopener">Conversemos por WhatsApp <span aria-hidden="true">↗</span><span class="sr-only"> (abre en nueva pestaña)</span></a>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section class="contact" id="alianza">
-      <div class="container contact-card reveal">
-        <div><p class="eyebrow dark">ASÓCIATE CON GRUPO TENNO</p><h2>Tu negocio puede vender más<br>cuando también se gestiona mejor.</h2><p>Si tienes una marca o empresa con potencial y necesitas mayor control administrativo, seguimiento de ventas, logística, finanzas, marketing, procesos o medición de resultados, conversemos. Evaluamos oportunidades de colaboración para ordenar la operación, identificar qué está funcionando y construir un plan de crecimiento con indicadores claros.</p><p><strong>No puedes controlar lo que no puedes medir.</strong></p></div>
-        <div class="contact-actions">
-          <a class="contact-link" href="mailto:grupotenno@gmail.com?subject=Quiero%20asociarme%20con%20Grupo%20Tenno"><span>Asociaciones</span><strong>grupotenno@gmail.com</strong><i>↗</i></a>
-          <a class="contact-link" href="https://wa.me/51967539019?text=Hola%20Aaron%2C%20tengo%20un%20negocio%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20una%20posible%20asociaci%C3%B3n%20con%20Grupo%20Tenno%20para%20mejorar%20su%20gesti%C3%B3n%20y%20crecimiento." target="_blank" rel="noopener"><span>WhatsApp</span><strong>Conversemos sobre tu negocio</strong><i>↗</i></a>
-          <div class="contact-location"><span>Enfoque</span><strong>Gestión · Medición · Crecimiento</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact section-soft" id="contacto">
-      <div class="container contact-card reveal">
-        <div><p class="eyebrow dark">CONTACTO</p><h2>¿Quieres conversar con<br>Grupo Tenno?</h2><p>Para consultas corporativas, alianzas o información sobre nuestras marcas, puedes comunicarte con Grupo Tenno o directamente con su dirección.</p></div>
-        <div class="contact-actions">
-          <a class="contact-link" href="mailto:grupotenno@gmail.com"><span>Grupo Tenno</span><strong>grupotenno@gmail.com</strong><i>↗</i></a>
-          <a class="contact-link" href="mailto:aarondq42@gmail.com"><span>Dirección</span><strong>aarondq42@gmail.com</strong><i>↗</i></a>
-          <a class="contact-link" href="https://wa.me/51967539019?text=Hola%20Aaron%2C%20me%20gustar%C3%ADa%20comunicarme%20contigo%20por%20Grupo%20Tenno." target="_blank" rel="noopener"><span>WhatsApp</span><strong>+51 967 539 019</strong><i>↗</i></a>
-          <div class="contact-location"><span>Base</span><strong>Perú</strong></div>
+        <div class="contact-card reveal" id="contacto" aria-labelledby="contacto-title">
+          <h2 id="contacto-title" class="contact-card-title">¿Quieres conversar con Grupo Tenno?</h2>
+          <p class="contact-card-lead">Para consultas corporativas, alianzas o información sobre nuestras marcas, puedes comunicarte con Grupo Tenno o directamente con su dirección.</p>
+          <ul class="contact-list">
+            <li><a href="mailto:grupotenno@gmail.com"><span class="c-label">Grupo Tenno</span><span class="c-value">grupotenno@gmail.com</span><span class="c-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="mailto:aarondq42@gmail.com"><span class="c-label">Dirección</span><span class="c-value">aarondq42@gmail.com</span><span class="c-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://wa.me/51967539019?text=Hola%20Aaron%2C%20me%20gustar%C3%ADa%20comunicarme%20contigo%20por%20Grupo%20Tenno." target="_blank" rel="noopener"><span class="c-label">WhatsApp</span><span class="c-value">+51 967 539 019</span><span class="c-arrow" aria-hidden="true">↗</span><span class="sr-only"> (abre en nueva pestaña)</span></a></li>
+            <li><div><span class="c-label">Base</span><span class="c-value">Perú</span></div></li>
+            <li><div><span class="c-label">Enfoque</span><span class="c-value">Gestión · Medición · Crecimiento</span></div></li>
+          </ul>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer section-dark">
-    <div class="container footer-top">
-      <div class="footer-brand"><img src="assets/grupo-tenno-logo.webp" alt="Grupo Tenno" loading="lazy"><p>Diferentes marcas, una misma visión.</p></div>
-      <div class="footer-links"><div><span>Portafolio actual</span><a href="https://certus-domain.my.canva.site/vidrieria-misti-glass" target="_blank" rel="noopener">Misti Glass ↗</a><a href="https://chemsito.github.io/Reserva-Aqueris/" target="_blank" rel="noopener">Reserva Aqueris ↗</a><a href="https://chemsito.github.io/Kantu-Floral/" target="_blank" rel="noopener">Kantu Floral ↗</a><a href="https://chemsito.github.io/Bocatto/" target="_blank" rel="noopener">Bocatto ↗</a></div><div><span>Grupo</span><a href="#nosotros">Nosotros</a><a href="#gestion">Gestión</a><a href="#vision">Misión y visión</a><a href="#fundador">Fundador</a><a href="#alianza">Asóciate</a><a href="#contacto">Contacto</a></div></div>
+  <footer class="site-footer dark">
+    <div class="wrap">
+      <div class="footer-hero">
+        <p class="footer-claim">Diferentes marcas, <em>una misma visión.</em></p>
+        <a class="btn btn-light" href="#alianza">Asóciate <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="footer-logo" href="#inicio" aria-label="Grupo Tenno, volver al inicio"><svg aria-hidden="true"><use href="#mark"/></svg><span>Grupo Tenno</span></a>
+          <p>Dirección integral para crear, gestionar, medir y hacer crecer marcas.</p>
+        </div>
+        <nav aria-label="Portafolio actual">
+          <h2 class="f-title">Portafolio actual</h2>
+          <ul>
+            <li><a href="https://certus-domain.my.canva.site/vidrieria-misti-glass" target="_blank" rel="noopener">Misti Glass ↗</a></li>
+            <li><a href="https://chemsito.github.io/Reserva-Aqueris/" target="_blank" rel="noopener">Reserva Aqueris ↗</a></li>
+            <li><a href="https://chemsito.github.io/Kantu-Floral/" target="_blank" rel="noopener">Kantu Floral ↗</a></li>
+            <li><a href="https://chemsito.github.io/Bocatto/" target="_blank" rel="noopener">Bocatto ↗</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Grupo">
+          <h2 class="f-title">Grupo</h2>
+          <ul>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#gestion">Qué hacemos</a></li>
+            <li><a href="#vision">Misión y visión</a></li>
+            <li><a href="#fundador">Fundador</a></li>
+            <li><a href="#alianza">Asóciate</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="f-title">Contacto</h2>
+          <ul>
+            <li><a href="mailto:grupotenno@gmail.com">grupotenno@gmail.com</a></li>
+            <li><a href="https://wa.me/51967539019" target="_blank" rel="noopener">+51 967 539 019</a></li>
+            <li><span>Perú</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Grupo Tenno. Todos los derechos reservados.</span>
+        <a href="#inicio" class="to-top">Volver arriba <span aria-hidden="true">↑</span></a>
+      </div>
     </div>
-    <div class="container footer-bottom"><span>© <span id="year"></span> Grupo Tenno. Todos los derechos reservados.</span><span>Perú</span></div>
   </footer>
 
-  <script src="portal-sound.js?v=1"></script>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3" defer></script>
 </body>
 </html>
