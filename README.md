@@ -10,9 +10,9 @@ Publicado en GitHub Pages: https://chemsito.github.io/GRUPO-TENNO/
 
 | Archivo | Contenido |
 | --- | --- |
-| `index.html` | Página única: hero, quiénes somos, qué hacemos, marcas, principios, fundador, asociaciones y contacto. Incluye meta SEO, Open Graph y datos estructurados (JSON-LD). |
-| `styles.css` | Sistema visual editorial (Geist, Geist Mono, Instrument Serif), responsive y con soporte de `prefers-reduced-motion`. |
-| `script.js` | Animaciones de entrada y scroll, menú móvil accesible, cabecera dinámica y microinteracciones. Sin dependencias. |
+| `index.html` | Página única: hero con núcleo 3D, qué es (explicado en 20 segundos), panel interactivo de 8 áreas, ciclo de trabajo, marcas, principios, fundador, cómo asociarse, preguntas frecuentes y contacto. Incluye meta SEO, Open Graph y datos estructurados (JSON-LD, con FAQPage). |
+| `styles.css` | Sistema visual "centro de mando" (oscuro, paneles HUD, retícula técnica; Geist y Geist Mono), responsive y con soporte de `prefers-reduced-motion`. |
+| `script.js` | Núcleo 3D en canvas (esfera de nodos con las 4 marcas en órbita, se puede girar arrastrando), pestañas accesibles de las 8 áreas, línea del ciclo ligada al scroll, revelados, menú móvil accesible y microinteracciones. Sin dependencias. |
 | `404.html` | Página de error personalizada. |
 | `sitemap.xml`, `robots.txt` | Indexación. |
 | `assets/` | Logos, foto del fundador, imagen Open Graph e iconos. |
